@@ -7,19 +7,20 @@ const rootRoute = createRootRoute({
   component: MainLayout,
 });
 
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: HomePage,
-});
+export const routes = {
+  homePage: {
+    getParentRoute: () => rootRoute,
+    path: '/',
+    component: HomePage,
+  },
+  loginPage: {
+    getParentRoute: () => rootRoute,
+    path: '/login',
+    component: LoginPage,
+  },
+};
 
-const aboutRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/login',
-  component: LoginPage,
-});
-
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const routeTree = rootRoute.addChildren(Object.values(routes).map((item) => createRoute(item)));
 
 const router = createRouter({
   routeTree,

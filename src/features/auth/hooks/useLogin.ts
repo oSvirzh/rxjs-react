@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { useAuth } from '@/core/hooks/useAuth';
 import { Credentials } from '@/shared/types/credentials.model';
+import { routes } from '@/app/router';
 
 export const useLogin = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export const useLogin = () => {
 
   useEffect(() => {
     if (authStatus) {
-      navigate({ to: '/' });
+      navigate({ to: routes.homePage.path });
     }
   }, [authStatus]);
 
