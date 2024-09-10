@@ -34,7 +34,6 @@ describe('LocalStorageService', () => {
 
   afterEach(() => {
     localStorageMock.clear();
-    localStorageMock.length = 0;
   });
 
   it('should initialize with no data', () => {

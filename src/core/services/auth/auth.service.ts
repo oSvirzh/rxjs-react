@@ -9,7 +9,7 @@ import { User } from '@/shared/types/user.model';
 
 @singleton()
 export class AuthService {
-  private readonly AUTH_TOKEN_KEY = 'username';
+  private readonly AUTH_TOKEN_KEY = 'token';
   private authStatusSubject = new BehaviorSubject<boolean>(false);
   private userSubject = new BehaviorSubject<User | null>(null);
   private authErrorSubject = new BehaviorSubject<string | null>(null);

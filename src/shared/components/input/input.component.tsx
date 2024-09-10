@@ -11,10 +11,6 @@ export const Input = ({ label, name, type, required, validation }: IInputProps) 
             {value}
           </Form.Message>
         ))}
-
-      <Form.Message className="text-[13px] text-red-600 opacity-[0.8]" match="typeMismatch">
-        Please provide a valid email
-      </Form.Message>
     </div>
     <Form.Control asChild>
       <input
